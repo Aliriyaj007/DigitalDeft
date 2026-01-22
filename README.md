@@ -1,120 +1,151 @@
-# DigitalDeft – Typing Speed Test Application
+# DigitalDeft
 
-![DigitalDeft Banner](https://via.placeholder.com/800x200/1a1a1a/FFD700?text=DigitalDeft+-+Master+Your+Typing+Speed)  
-*Modern, responsive, and feature-rich typing speed tester*
+![License](https://img.shields.io/badge/license-MIT-blue.svg) ![Version](https://img.shields.io/badge/version-1.1.0-green.svg) ![Size](https://img.shields.io/badge/size-45kb-orange.svg) ![Status](https://img.shields.io/badge/maintenance-active-success.svg)
 
----
+**DigitalDeft** is a high-performance, privacy-first typing speed trainer built for developers and touch typists who value precision over bloat. It runs entirely client-side, saves data locally, and provides instant, distraction-free feedback.
 
-## 🌐 Live Demo
-Try it out now: [https://aliriyaj007.github.io/DigitalDeft/](https://aliriyaj007.github.io/DigitalDeft/)
+This project proves its value by existing: **0ms latency, zero tracking, pure focus.**
 
 ---
 
-## 🚀 Features
+## ⚡ Why This Tool Exists
 
-- **Real-time WPM & Accuracy Tracking**: Instant feedback as you type
-- **Multiple Test Modes**: 
-  - Time-based (15s to 300s)
-  - Word count (10 to 500 words)
-- **Customizable Content**:
-  - Common words, programming snippets, or long words
-  - Toggle punctuation, numbers, and symbols
-  - Enter your own custom text
-- **Comprehensive Statistics**:
-  - Best WPM & accuracy records
-  - Test history with date tracking
-  - Progress visualization
-- **Personalization**:
-  - Dark/Light theme
-  - Adjustable font size (14px–24px)
-- **Data Management**:
-  - **Backup & Restore**: Export/import all data as JSON
-  - Automatic saving to browser storage
-- **Fully Responsive**: Works on mobile, tablet, and desktop
+Most typing tests have lost their way:
+- They require verified accounts just to save a score.
+- They are bloated with ad-trackers and heavy frameworks.
+- They lag on slower devices, ruining the accuracy of the test itself.
+
+**DigitalDeft** solves this by stripping away the noise. It is a raw, precise instrument for measuring human input speed.
 
 ---
 
-## 🖥️ Screenshots
+## ⚖️ Before vs. After
 
-| Dashboard | Test Screen | Statistics |
-|-----------|-------------|------------|
-| ![Dashboard](https://via.placeholder.com/300x200/2d2d2d/FFD700?text=Dashboard) | ![Test](https://via.placeholder.com/300x200/000000/4CAF50?text=Live+Typing+Test) | ![Stats](https://via.placeholder.com/300x200/2d2d2d/FFD700?text=Performance+Stats) |
-
-> *Actual screenshots will be added soon*
+| Feature | Standard Typing Sites | DigitalDeft |
+| :--- | :--- | :--- |
+| **Privacy** | Tracking pixels, Ads, Login Walls | **100% Offline, Incognito Mode** |
+| **Performance** | React/Angular bloat, loading spinners | **Vanilla JS, Instant Load** |
+| **Latency** | Network dependency | **0ms Input Lag** |
+| **Customization** | Paywalled themes | **CSS Variables, Live Theming** |
+| **Data** | Vendor-locked | **JSON Export/Import** |
 
 ---
 
-## 🛠️ Installation
+## ⏱️ Use in Under 60 Seconds
 
-### Option 1: Clone & Run Locally
+### Method 1: The "I Just Want to Type" Way
+1. Click the **Live Demo**: [https://aliriyaj007.github.io/DigitalDeft/](https://aliriyaj007.github.io/DigitalDeft/)
+2. Start typing.
 
- Clone the repository
-git clone https://github.com/aliriyaj007/DigitalDeft.git
+### Method 2: The "Offline Forever" Way
+1. Download [DigitalDeft.html](https://github.com/Aliriyaj007/DigitalDeft/archive/refs/heads/main.zip) (Source ZIP).
+2. Extract and double-click `index.html`.
+3. Disconnect your internet. It still works.
 
- Navigate to project directory
+---
+
+## 🛠️ Installation & Setup
+
+### For Developers (Git)
+```bash
+# 1. Clone the repository
+git clone https://github.com/Aliriyaj007/DigitalDeft.git
+
+# 2. Navigate to the folder
 cd DigitalDeft
 
- Open in your browser
-open index.html
+# 3. Open in browser (no build step required)
+# Linux/Mac
+open index.html 
+# Windows
+start index.html
+```
 
 ---
 
-### Option 2: Download ZIP
-1. Click **Code** → **Download ZIP**
-2. Extract the folder
-3. Open `index.html` in your browser
+## 🧩 Architecture & Flow
 
-> 💡 **No build step required** – pure HTML, CSS, and JavaScript!
+DigitalDeft is built with a modular architecture for scalability and maintainability.
+
+```mermaid
+graph TD
+    A[main.js] --> B[TypingSpeedChecker]
+    B --> C[AudioManager]
+    B --> D[StorageManager]
+    B --> E[UIManager]
+    
+    C -->|Synthesize| F[Web Audio API]
+    D -->|Persist| G[LocalStorage]
+    E -->|Render| H[DOM]
+```
+
+### Core Flow
+```mermaid
+graph TD
+    A[User Opens App] --> B{StorageManager}
+    B -->|Load| C[Settings & History]
+    
+    C --> D[Idle State]
+    
+    D -->|Input| E[TypingSpeedChecker]
+    E -->|Event| F[AudioManager]
+    F -->|Play| G[Sound Output]
+    
+    E -->|Update| H[DOM / UI]
+    
+    E -->|Finish| I[Save Result]
+    I --> B
+```
+
+### Visualizing the Audio Engine 
+The audio engine synthesizes sounds in real-time using the Web Audio API, avoiding large asset files.
+
+```mermaid
+sequenceDiagram
+    participant User
+    participant InputHandler
+    participant AudioContext
+    participant Oscillator
+    
+    User->>InputHandler: Press Key "A"
+    InputHandler->>AudioContext: Check State
+    AudioContext->>AudioContext: Resume(if suspended)
+    InputHandler->>Oscillator: Create Oscillator (Sine/Square)
+    InputHandler->>Oscillator: Ramp Gain (Attack/Decay)
+    Oscillator->>User: Audio Output
+```
 
 ---
 
-### 🧪 How to Use
+## 🚀 Features at a Glance
 
-**Start a Test:**
-- Click "Start Quick Test" on the Dashboard
-- Or go to **Test** tab → "Start Test"
-
-**Customize:**
-- Adjust settings in the **Settings** tab
-- Enable programming mode, change difficulty, etc.
-
-**Track Progress:**
-- View stats in the **Statistics** tab
-- Monitor your best scores on the Dashboard
-
-**Backup Data:**
-- In **Settings** → "Export All Data" to download a `.json` file
-- Use "Import Data" to restore on any device
+- **Four Sound Packs**: Mechanical, Typewriter, Soft, Bubble (Synthesized).
+- **Multiple Modes**: Time (15s-300s) or Word Count (10-500 words).
+- **Developer Mode**: Practice with `JavaScript`, `Rust`, and `Python` keywords.
+- **Focus & Zen**: `F` for Focus Mode, `Z` for Zen Mode.
+- **Analytics**: Real-time WPM, Accuracy, and History tracking.
+- **Portable**: Export your entire progress to a single JSON file.
+- **Modular Codebase**: Cleanly separated logic for Audio, Storage, and UI.
 
 ---
 
+## � Author & Contact
 
-### 🤝 Contributing
-Contributions are welcome! Please follow these steps:
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+**Riyajul Ali**  
+*Senior Maintainer & Developer*
 
----
-
-### 📄 License
-This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
-
+- **GitHub**: [Aliriyaj007](https://github.com/Aliriyaj007)
+- **LinkedIn**: [Aliriyaj007](https://linkedin.com/in/Aliriyaj007)
+- **Email**: [aliriyaj007@protonmail.com](mailto:aliriyaj007@protonmail.com)
+- **Web App**: [DigitalDeft Live](https://aliriyaj007.github.io/DigitalDeft/)
 
 ---
 
-### 🙏 Acknowledgements
-- **Font**: [Inter](https://fonts.google.com/specimen/Inter) by Rasmus Andersson
-- **Icons**: [Feather Icons](https://feathericons.com/) (via inline SVG)
-- **Inspiration**: Monkeytype, Keybr, and other typing test platforms
+## � License
 
----
+This project is licensed under the **MIT License**. You are free to fork, modify, and distribute this software.
 
-### 📬 Contact
-Created by **Ali Riyaj**  
-🔗 [Portfolio](https://aliriyaj007.github.io/)  
-📧 aliriyaj007@protonmail.com  
-
-> " **DigitalDeft** – Where speed meets precision! 🚀"
+```text
+The MIT License (MIT)
+Copyright (c) 2026 Riyajul Ali
+```

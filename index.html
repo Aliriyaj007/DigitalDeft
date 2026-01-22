@@ -1,29 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DigitalDeft</title>
-    
+
     <!-- Preload critical font -->
-    <link rel="preload" 
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" 
-          as="style" 
-          onload="this.onload=null;this.rel='stylesheet'">
-    
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+        as="style" onload="this.onload=null;this.rel='stylesheet'">
+
     <!-- Fallback for JS-disabled browsers -->
     <noscript>
-        <link rel="stylesheet" 
-              href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
+        <link rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
     </noscript>
-    
+
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 </head>
+
 <body>
     <div class="incognito-indicator">INCOGNITO MODE</div>
-    
+
     <div class="app-container">
         <!-- Header -->
         <header class="app-header">
@@ -43,30 +43,47 @@
         <!-- Navigation Tabs -->
         <nav class="tab-navigation">
             <button class="tab-btn active" data-tab="dashboard">
-                <svg class="tab-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M3 7V17C3 18.6569 4.34315 20 6 20H18C19.6569 20 21 18.6569 21 17V7C21 5.34315 19.6569 4 18 4H6C4.34315 4 3 5.34315 3 7Z"></path>
+                <svg class="tab-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2">
+                    <path
+                        d="M3 7V17C3 18.6569 4.34315 20 6 20H18C19.6569 20 21 18.6569 21 17V7C21 5.34315 19.6569 4 18 4H6C4.34315 4 3 5.34315 3 7Z">
+                    </path>
                     <path d="M3 7L12 13L21 7"></path>
                 </svg>
                 Dashboard
             </button>
             <button class="tab-btn" data-tab="test">
-                <svg class="tab-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <svg class="tab-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2">
                     <path d="M12 20V4M18 10L12 4L6 10"></path>
                 </svg>
                 Test
             </button>
             <button class="tab-btn" data-tab="stats">
-                <svg class="tab-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <svg class="tab-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2">
                     <path d="M12 20V10M18 20V4M6 20V16"></path>
                 </svg>
                 Statistics
             </button>
             <button class="tab-btn" data-tab="settings">
-                <svg class="tab-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <svg class="tab-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2">
                     <circle cx="12" cy="12" r="3"></circle>
-                    <path d="M12 1V6M12 18V23M4.22 4.22L6.89 6.89M17.11 17.11L19.78 19.78M1 12H6M18 12H23M4.22 19.78L6.89 17.11M17.11 6.89L19.78 4.22"></path>
+                    <path
+                        d="M12 1V6M12 18V23M4.22 4.22L6.89 6.89M17.11 17.11L19.78 19.78M1 12H6M18 12H23M4.22 19.78L6.89 17.11M17.11 6.89L19.78 4.22">
+                    </path>
                 </svg>
                 Settings
+            </button>
+            <button class="tab-btn" data-tab="guide">
+                <svg class="tab-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                    <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                </svg>
+                Guide
             </button>
         </nav>
 
@@ -77,7 +94,8 @@
                 <div class="dashboard-grid">
                     <div class="dashboard-card">
                         <h2>Welcome to DigitalDeft</h2>
-                        <p>Test your typing speed and accuracy with our modern, responsive application. Customize your tests and track your progress over time.</p>
+                        <p>Test your typing speed and accuracy with our modern, responsive application. Customize your
+                            tests and track your progress over time.</p>
                         <button id="quick-start-btn" class="btn btn-primary">Start Quick Test</button>
                     </div>
                     <div class="dashboard-card">
@@ -122,12 +140,8 @@
                     <div id="test-text" class="test-text-container">
                         <!-- Test text will be populated here -->
                     </div>
-                    <textarea 
-                        id="typing-input" 
-                        class="typing-input" 
-                        placeholder="Start typing here when the test begins..."
-                        disabled
-                    ></textarea>
+                    <textarea id="typing-input" class="typing-input"
+                        placeholder="Start typing here when the test begins..." disabled></textarea>
                 </div>
             </section>
 
@@ -156,7 +170,7 @@
                             <p>WPM Record</p>
                         </div>
                     </div>
-                    
+
                     <div class="history-section">
                         <h3>Recent Test History</h3>
                         <div id="history-list" class="history-list">
@@ -171,7 +185,7 @@
                 <div class="settings-container">
                     <div class="setting-group">
                         <h3>Test Configuration</h3>
-                        
+
                         <div class="setting-item">
                             <label for="test-mode">Test Mode</label>
                             <select id="test-mode" class="form-select">
@@ -179,19 +193,19 @@
                                 <option value="words">Word Count</option>
                             </select>
                         </div>
-                        
+
                         <div class="setting-item">
                             <label for="time-limit">Time Limit (seconds)</label>
                             <input type="range" id="time-limit" class="form-slider" min="15" max="300" value="60">
                             <span id="time-limit-value" class="slider-value">60</span>
                         </div>
-                        
+
                         <div class="setting-item">
                             <label for="word-count">Word Count</label>
                             <input type="range" id="word-count" class="form-slider" min="10" max="500" value="100">
                             <span id="word-count-value" class="slider-value">100</span>
                         </div>
-                        
+
                         <div class="setting-item">
                             <label for="difficulty">Difficulty Level</label>
                             <select id="difficulty" class="form-select">
@@ -202,38 +216,38 @@
                             </select>
                         </div>
                     </div>
-                    
+
                     <div class="setting-group">
                         <h3>Content Type</h3>
-                        
+
                         <div class="checkbox-group">
                             <label class="checkbox-label">
                                 <input type="checkbox" id="include-punctuation" checked>
                                 Include Punctuation
                             </label>
                         </div>
-                        
+
                         <div class="checkbox-group">
                             <label class="checkbox-label">
                                 <input type="checkbox" id="include-numbers" checked>
                                 Include Numbers
                             </label>
                         </div>
-                        
+
                         <div class="checkbox-group">
                             <label class="checkbox-label">
                                 <input type="checkbox" id="include-symbols">
                                 Include Symbols
                             </label>
                         </div>
-                        
+
                         <div class="checkbox-group">
                             <label class="checkbox-label">
                                 <input type="checkbox" id="programming-mode">
                                 Programming Language Snippets
                             </label>
                         </div>
-                        
+
                         <div class="checkbox-group">
                             <label class="checkbox-label">
                                 <input type="checkbox" id="long-words-mode">
@@ -241,29 +255,32 @@
                             </label>
                         </div>
                     </div>
-                    
+
                     <div class="setting-group">
                         <h3>Custom Text</h3>
-                        <textarea id="custom-text" class="form-textarea" placeholder="Enter your own text to practice..."></textarea>
+                        <textarea id="custom-text" class="form-textarea"
+                            placeholder="Enter your own text to practice..."></textarea>
                     </div>
-                    
+
                     <div class="setting-group">
                         <h3>Appearance</h3>
-                        
+
                         <div class="setting-item">
                             <label for="font-size">Font Size</label>
                             <input type="range" id="font-size" class="form-slider" min="14" max="24" value="18">
                             <span id="font-size-value" class="slider-value">18px</span>
                         </div>
-                        
+
                         <div class="setting-item">
                             <label for="theme">Theme</label>
                             <select id="theme" class="form-select">
                                 <option value="dark">Dark Mode</option>
                                 <option value="light">Light Mode</option>
+                                <option value="matrix">Matrix Mode</option>
+                                <option value="cotton_candy">Cotton Candy</option>
                             </select>
                         </div>
-                        
+
                         <div class="setting-item">
                             <label for="stats-refresh">Stats Refresh Rate</label>
                             <select id="stats-refresh" class="form-select">
@@ -274,27 +291,38 @@
                             </select>
                         </div>
                     </div>
-                    
+
                     <div class="setting-group">
                         <h3>Audio Feedback</h3>
-                        
+
                         <div class="setting-item">
                             <label class="checkbox-label">
                                 <input type="checkbox" id="typing-sound-toggle">
                                 Enable Typing Sounds
                             </label>
                         </div>
-                        
+
+                        <div class="setting-item">
+                            <label for="sound-pack">Sound Pack</label>
+                            <select id="sound-pack" class="form-select">
+                                <option value="mechanical">Mechanical (Clicky)</option>
+                                <option value="typewriter">Typewriter</option>
+                                <option value="soft">Soft (Laptop)</option>
+                                <option value="bubble">Bubble</option>
+                            </select>
+                        </div>
+
                         <div class="setting-item">
                             <label for="typing-sound-volume">Volume</label>
-                            <input type="range" id="typing-sound-volume" class="form-slider" min="0" max="1" step="0.1" value="0.5">
+                            <input type="range" id="typing-sound-volume" class="form-slider" min="0" max="1" step="0.1"
+                                value="0.5">
                             <span id="typing-sound-volume-value" class="slider-value">50%</span>
                         </div>
                     </div>
-                    
+
                     <div class="setting-group">
                         <h3>Privacy</h3>
-                        
+
                         <div class="setting-item">
                             <label class="checkbox-label">
                                 <input type="checkbox" id="incognito-mode">
@@ -309,29 +337,83 @@
                     <!-- Backup & Restore Section -->
                     <div class="setting-group">
                         <h3>Backup & Restore</h3>
-                        
+
                         <div class="setting-item">
-                            <button id="export-data-btn" class="btn btn-primary" style="width: 100%;">Export All Data</button>
-                            <p class="help-text" style="margin-top: var(--spacing-sm); font-size: 0.875rem; color: var(--text-gray);">
+                            <button id="export-data-btn" class="btn btn-primary" style="width: 100%;">Export All
+                                Data</button>
+                            <p class="help-text"
+                                style="margin-top: var(--spacing-sm); font-size: 0.875rem; color: var(--text-gray);">
                                 Download your settings and test history as a JSON file.
                             </p>
                         </div>
-                        
+
                         <div class="setting-item">
-                            <label for="import-data" class="btn btn-secondary" style="display: block; text-align: center; cursor: pointer;">
+                            <label for="import-data" class="btn btn-secondary"
+                                style="display: block; text-align: center; cursor: pointer;">
                                 Import Data
                             </label>
                             <input type="file" id="import-data" accept=".json" style="display: none;" />
-                            <p class="help-text" style="margin-top: var(--spacing-sm); font-size: 0.875rem; color: var(--text-gray);">
+                            <p class="help-text"
+                                style="margin-top: var(--spacing-sm); font-size: 0.875rem; color: var(--text-gray);">
                                 Upload a previously exported JSON file to restore your data.
                             </p>
                         </div>
                     </div>
                 </div>
             </section>
+
+            <!-- User Guide Tab -->
+            <section id="guide" class="tab-pane">
+                <div class="guide-container">
+                    <div class="guide-step">
+                        <div class="step-number">01</div>
+                        <div class="step-content">
+                            <h3>Start a Test</h3>
+                            <p>Click <strong>Start Test</strong> or press <span class="key-badge">Enter</span> to begin.
+                                The timer starts when you type your first character.</p>
+                        </div>
+                    </div>
+
+                    <div class="guide-step">
+                        <div class="step-number">02</div>
+                        <div class="step-content">
+                            <h3>Type Accuracy</h3>
+                            <p>Correct characters will light up <span style="color: var(--success-green)">green</span>.
+                                Errors will show as <span style="color: var(--error-red)">red</span>.
+                                You can continue typing without backspacing, but your accuracy score will decrease.</p>
+                        </div>
+                    </div>
+
+                    <div class="guide-step">
+                        <div class="step-number">03</div>
+                        <div class="step-content">
+                            <h3>Shortcuts</h3>
+                            <p><span class="key-badge">F</span> Toggle Focus Mode (when not typing)</p>
+                            <p><span class="key-badge">Alt</span> + <span class="key-badge">R</span> Quick Restart</p>
+                            <p><span class="key-badge">Esc</span> Exit Focus/Zen Mode</p>
+                        </div>
+                    </div>
+
+                    <div class="guide-step">
+                        <div class="step-number">04</div>
+                        <div class="step-content">
+                            <h3>Customization</h3>
+                            <p>Visit the <strong>Settings</strong> tab to change themes (Matrix, Cotton Candy),
+                                enable sound packs (Mechanical, Typewriter), or adjust difficulty.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </main>
+
+        <footer class="app-footer">
+            Made with ❤️ by <a href="https://github.com/Aliriyaj007" target="_blank">Aliriyaj007</a>
+        </footer>
     </div>
 
+    <script src="audio-manager.js"></script>
+    <script src="storage-manager.js"></script>
     <script src="app.js"></script>
 </body>
+
 </html>
